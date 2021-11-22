@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Desa Sikunang</title>
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg">
+    <meta name="msapplication-TileColor" content="#766df4">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/2db3b3669b.js" crossorigin="anonymous"></script>
+    <meta name="theme-color" content="#ffffff">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!-- Page loading styles-->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #737491;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        border: .15em solid #766df4;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      
+    </style>
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          var preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 2000);
+        };
+      })();
+      
+    </script>
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="asset/css/simplebar.min.css"/>
+    <link rel="stylesheet" media="screen" href="asset/css/tiny-slider.css"/>
+    <link rel="stylesheet" media="screen" href="asset/css/flatpickr.min.css"/>
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="asset/css/theme.min.css">
+  </head>
+  <!-- Body-->
+  <body>
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div>
+    <main class="page-wrapper">
+      <!-- Navbar (Floating light)-->
+      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
+      <header class="header navbar navbar-expand-lg navbar-dark navbar-floating navbar-sticky" data-scroll-header data-fixed-element>
+        <div class="container px-0 px-xl-3">
+          <button class="navbar-toggler ms-n2 me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#primaryMenu"><span class="navbar-toggler-icon"></span></button>
+          <div class="offcanvas offcanvas-collapse order-lg-2" id="primaryMenu">
+            <div class="offcanvas-header navbar-shadow">
+              <h5 class="mt-1 mb-0">Menu</h5>
+              <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <!-- Menu-->
+              <ul class="navbar-nav">
+                <li class="nav-item active"><a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">Sejarah</a>
+                </li>
+                <li class="nav-item dropdown dropdown-mega"><a class="nav-link" href="#" data-bs-toggle="dropdown">Wisata</a>
+                  <div class="dropdown-menu">
+                    <div class="dropdown-column mb-2 mb-lg-0">
+                     <a class="dropdown-item" href="#">Test</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">Kondisi Geografis</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Populasi</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Page content-->
+      <!-- Hero-->
+      <section class="jarallax bg-dark py-7" data-jarallax data-speed="0.25">
+        <div class="jarallax-img" style="background-image: url(asset/img/4-disebut-ondo-budho-karena.jpg);  background-color: rgba(200,100,0,.5); background-blend-mode: multiply;"></div>
+        <div class="container py-5 py-sm-7 text-center">
+          <div class="py-md-6">
+            <h1 class="font-weight-bold text-light pb-1">Andha Budha</h1>
+          </div>
+        </div>
+      </section>
+      <!-- FAQ-->
+      <section class="container py-5 my-4 my-sm-0 py-sm-6 py-md-7">
+        <h2 class="text-center pb-2 mb-5">Seputar Andha Budha</h2>
+        <div class="row pb-2">
+          <div class="col-lg-6">
+            <div class="accordion" id="faq">
+              <div class="accordion-item shadow">
+                <h2 class="accordion-header" id="faq-heading-1">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1" aria-expanded="true" aria-controls="faq-content-1">Tentang</button>
+                </h2>
+                <div class="accordion-collapse collapse" id="faq-content-1" aria-labelledby="faq-heading-1" data-bs-parent="#faq">
+                  <div class="accordion-body">
+                    <div class="fs-sm">Andha Budha merupakan sebuah tangga kesucian. Sesuai artinya yakni “Andha” yang berarti tangga dan “Budha” yang berarti kesucian. Andha Budha menghubungkan Telaga Cebong dengan Dieng, terdapat pemandangan alam, batu-batu kuno yang merupakan peninggalan sejarah dan berpotensi menjadi agro-wisata. </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item shadow">
+                <h2 class="accordion-header" id="faq-heading-4">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-4" aria-expanded="false" aria-controls="faq-content-4">Lokasi</button>
+                </h2>
+                <div class="accordion-collapse collapse show" id="faq-content-4" aria-labelledby="faq-heading-4" data-bs-parent="#faq">
+                  <div class="accordion-body">
+                    <div class="fs-sm"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3958.137315180319!2d109.908619!3d-7.2251745!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e700d657a246255%3A0x1b155b70d8f4663a!2sSitus%20Ondo%20Budha!5e0!3m2!1sen!2sid!4v1637477633896!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-none d-lg-block col-lg-5 offset-lg-1"><img src="https://around.createx.studio/img/demo/booking/illustration.svg" alt="Illustration"></div>
+        </div>
+      </section>
+      <!-- Subscribe CTA-->
+    </main>
+    <footer class="site-footer bg-dark pt-5 pb-4">
+      <div class="container d-md-flex justify-content-between align-items-center text-center">
+        <p class="fs-sm mb-3 order-md-1"><span class="text-light opacity-50 me-1">© All rights reserved. Made by</span><a class="nav-link-style nav-link-light" href="https://github.com/nikholaskukuh" target="_blank" rel="noopener">nikholaskukuh</a></p>
+      </div>
+    </footer>
+    <!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll data-fixed-element><span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="btn-scroll-top-icon fas fa-chevron-up">   </i></a>
+    <!-- Vendor scrits: js libraries and plugins-->
+    <script src="asset/js/bootstrap.bundle.min.js"></script>
+    <script src="asset/js/simplebar.min.js"></script>
+    <script src="asset/js/smooth-scroll.polyfills.min.js"></script>
+    <script src="asset/js/jarallax.min.js"></script>
+    <script src="asset/js/tiny-slider.js"></script>
+    <script src="asset/js/flatpickr.min.js"></script>
+    <script src="asset/js/rangePlugin.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Main theme script-->
+    <script src="asset/js/theme.min.js"></script>
+    <script>
+      function doSearch(text) {
+          if (window.find(text)) {
+              console.log(window.find(text));
+          }
+      }
+  </script>
+  </body>
+</html>
